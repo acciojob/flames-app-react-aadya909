@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const App = () => {
+function App() {
   const [name1, setName1] = useState('');
   const [name2, setName2] = useState('');
   const [result, setResult] = useState('');
@@ -38,18 +38,20 @@ const App = () => {
   return (
     <div>
       <input
+        type="text"
         data-testid="input1"
         name="name1"
+        placeholder="Enter first name"
         value={name1}
         onChange={(e) => setName1(e.target.value)}
-        placeholder="Enter first name"
       />
       <input
+        type="text"
         data-testid="input2"
         name="name2"
+        placeholder="Enter second name"
         value={name2}
         onChange={(e) => setName2(e.target.value)}
-        placeholder="Enter second name"
       />
       <button
         data-testid="calculate_relationship"
@@ -68,6 +70,6 @@ const App = () => {
       <h3 data-testid="answer">{result}</h3>
     </div>
   );
-};
+}
 
 export default App;
